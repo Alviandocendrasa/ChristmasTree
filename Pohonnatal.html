@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>xyz</title>
+        <style>
+            .background{
+                background-color: slategrey;
+                text-align: center;
+                width: 120px;
+                height: 200px;
+                border-radius: 12px;
+
+            }
+
+
+            .tree{
+                width: 120px;
+
+            }
+
+            .tree-layer,
+            .tree-log{
+                margin: 0 auto;
+            }
+
+            .tree-layer{
+                width: 0;
+                height: 0;
+                border-left:40px solid transparent;
+                border-right:40px solid transparent;
+                border-bottom:60px solid green;
+            }
+
+            .tree-layer:nth-child(2){
+                margin-top: -30px;
+                border-left-width: 50px;
+                border-right-width: 50px;
+                border-bottom-width: 80px;
+            }
+
+            .tree-layer:nth-child(3){
+                margin-top: -50px;
+                border-left-width: 50px;
+                border-right-width: 50px;
+                border-bottom-width: 80px;
+            }
+
+            .tree-log{
+                width: 20px;
+                height: 30px;
+                background-color: brown;
+            }
+
+            .ball1 {
+                position: absolute;
+                top: 50px;
+                left: 45px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(255,186,186,1) 100%);
+                border-radius: 50%;
+            }
+
+            .ball2 {
+                position: absolute;
+                top: 50px;
+                left: 80px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(186, 239, 255) 100%);
+                border-radius: 50%;
+            }
+
+            .ball3 {
+                position: absolute;
+                top: 75px;
+                left: 50px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 231, 124) 100%);
+                border-radius: 50%;
+            }
+
+            .ball4 {
+                position: absolute;
+                top: 75px;
+                left: 78px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(159, 241, 255) 100%);
+                border-radius: 50%;
+            }
+
+            .ball5 {
+                position: absolute;
+                top: 100px;
+                left: 43px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 234, 116) 100%);
+                border-radius: 50%;
+            }
+
+            .ball6 {
+                position: absolute;
+                top: 103px;
+                left: 90px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(255,186,186,1) 100%);
+                border-radius: 50%;
+            }
+
+            .ball7 {
+                position: absolute;
+                top: 128px;
+                left: 35px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(174, 218, 255) 100%);
+                border-radius: 50%;
+            }
+
+            .ball8 {
+                position: absolute;
+                top: 130px;
+                left: 93px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%);
+                border-radius: 50%;
+            }
+
+            .ballT1{
+                position: absolute;
+                top: 30px;
+                left: 63px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(255,186,186,1) 100%);
+                border-radius: 50%;
+            }
+
+            .ballT2{
+                position: absolute;
+                top: 100px;
+                left: 65px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%);
+                border-radius: 50%;
+            }
+
+            .ballT3{
+                position: absolute;
+                top: 127px;
+                left: 65px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%);
+                border-radius: 50%;
+            }
+
+            .ballT4{
+                position: absolute;
+                top: 56px;
+                left: 62px;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%);
+                border-radius: 50%;
+            }
+
+        </style>
+        
+    </head>
+
+    <script>
+
+        let a = 1
+        let b = 1
+
+        setInterval(function(){
+            if(a%2 === 0){
+                light()
+                console.log("Hello1")
+                a++;
+            }
+            else{
+                dark()
+                console.log("Hello2")
+                a++;
+            }
+        }, 1000);
+
+        setInterval(function(){
+            if(b%2 === 0){
+                ballLight()
+                b++
+            }
+            else{
+                ballDark()
+                b++
+            }
+        }, 300);
+
+        function light(){
+            let background1 = document.getElementById("background1")
+            let text = document.getElementById("text")
+            background1.style.backgroundImage = "url('lightgrey.jpg')"
+            text.style.color = "black"
+        }
+
+        function dark(){
+            let background1 = document.getElementById("background1")
+            let text = document.getElementById("text")
+            background1.style.backgroundImage = "url('snow.jpg')"
+            text.style.color = "white"
+        }
+
+        function ballLight(){
+            let ball1 = document.getElementById("ball1")
+            let ball2 = document.getElementById("ball2")
+            let ball3 = document.getElementById("ball3")
+            let ball4 = document.getElementById("ball4")
+            let ball5 = document.getElementById("ball5")
+            let ball6 = document.getElementById("ball6")
+            let ball7 = document.getElementById("ball7")
+            let ballT1 = document.getElementById("ballT1")
+            let ballT2 = document.getElementById("ballT2")
+            let ballT3 = document.getElementById("ballT3")
+            let ballT4 = document.getElementById("ballT4")
+            
+
+
+            ball1.style.background = "lightgrey"
+            ball2.style.background = "lightgrey"
+            ball3.style.background = "lightgrey"
+            ball4.style.background = "lightgrey"
+            ball5.style.background = "lightgrey"
+            ball6.style.background = "lightgrey"
+            ball7.style.background = "lightgrey"
+            ball8.style.background = "lightgrey"
+            ballT1.style.background = "lightgrey"
+            ballT2.style.background = "lightgrey"
+            ballT3.style.background = "lightgrey"
+            ballT4.style.background = "lightgrey"
+        }
+
+        function ballDark(){
+            let ball1 = document.getElementById("ball1")
+            let ball2 = document.getElementById("ball2")
+            let ball3 = document.getElementById("ball3")
+            let ball4 = document.getElementById("ball4")
+            let ball5 = document.getElementById("ball5")
+            let ball6 = document.getElementById("ball6")
+            let ball7 = document.getElementById("ball7")
+            let ballT1 = document.getElementById("ballT1")
+            let ballT2 = document.getElementById("ballT2")
+            let ballT3 = document.getElementById("ballT3")
+            let ballT4 = document.getElementById("ballT4")
+
+            ball1.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(255,186,186,1) 100%)"
+            ball2.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(186, 239, 255) 100%)"
+            ball3.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 231, 124) 100%)"
+            ball4.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(159, 241, 255) 100%)"
+            ball5.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 234, 116) 100%)"
+            ball6.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(255,186,186,1) 100%)"
+            ball7.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(174, 218, 255) 100%)"
+            ball8.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%)"
+            ballT1.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(255,186,186,1) 100%)"
+            ballT2.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%)"
+            ballT3.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%)"
+            ballT4.style.background = "radial-gradient(circle, rgba(255,255,255,1) 6%, rgb(255, 224, 157) 100%)"
+        }
+    </script>
+
+    <body>
+        <div id="background1" class="background">
+            <div class="center">
+                <div class="tree">
+                    <div class="tree-layer"></div>
+                    <div class="tree-layer"></div>
+                    <div class="tree-layer"></div>
+                    <div class="tree-log"></div>
+                </div>
+                <div id="ball1" class="ball1"></div>
+                <div id="ball2" class="ball2"></div>
+                <div id="ball3" class="ball3"></div>
+                <div id="ball4" class="ball4"></div>
+                <div id="ball5" class="ball5"></div>
+                <div id="ball6" class="ball6"></div>
+                <div id="ball7" class="ball7"></div>
+                <div id="ball8" class="ball8"></div>
+                <div id="ballT1" class="ballT1"></div>
+                <div id="ballT2" class="ballT2"></div>
+                <div id="ballT3" class="ballT3"></div>
+                <div id="ballT4" class="ballT4"></div>
+                <span id="text">Merry Christmas</span>
+            </div>
+        </div>
+    </body>
+
+</html>
